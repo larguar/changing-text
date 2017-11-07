@@ -2,7 +2,7 @@
 <html >
 <head>
   <meta charset="UTF-8">
-  <title>Changing text</title>
+  <title>Changing Text</title>
   <link href='https://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
   
   
@@ -14,15 +14,15 @@ body {
 }
 
 .content {
-    max-width: 1200px;
+    max-width: 900px;
     margin: 120px auto 0;
 }
 
 .text, .change-text {
   color: #333;
   text-align: center;
-  font-size: 30px;
-  font-family: Arial, serif;
+  font-size: 44px;
+  font-family: serif;
   display: inline;
   font-weight: 300;
 }
@@ -51,14 +51,14 @@ p {
 <body>
 	
   <div class="content">
-	  <div class="text">Knowledge. Experience. Integrity. Commit</div>
+	  <div class="text">Knowledge. Experience. Integrity.<br>Commit</div>
 	  <div class="change-text">ment.</div>
 	  <p>Wright, Constable & Skeen proudly continues a tradition of providing unparalleled legal services in the Mid-Atlantic region that began more than one hundred years ago. Our drive for excellence blends the personal attention and responsiveness expected of mid-sized law firms with one of the major advantages provided by larger firms—dynamic practice groups with highly skilled and acclaimed lawyers. We are committed to protecting and empowering our clients and achieving their goals.</p>
   </div>
   
 <!--     <script  src="js/index.js"></script> -->
 <script>
-	var words = ['ment.', 'ment to your goals.','ment to your vision.','ment to your success.','ment to fighting for your rights.','ment to turning problems into solutions.', 'ment to turning problems into solutions.','ment to you.'],
+	var words = ['ment.', 'ment to your goals.','ment to your vision.','ment to your success.','ment to fighting for your rights.','ment to turning problems into solutions.','ment to you.'],
     currentStep = 0,
     textEl = document.querySelector('.change-text'),
     oldWord = '';
