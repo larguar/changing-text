@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Changing text</title>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
+  
+  
+<!--       <link rel="stylesheet" href="css/style.css"> -->
+<style>
+body {
+  margin: 0px;
+  background: #EFEFEF;
+}
+
+.content {
+    max-width: 1200px;
+    margin: 120px auto 0;
+}
+
+.text, .change-text {
+  color: #333;
+  text-align: center;
+  font-size: 30px;
+  font-family: Arial, serif;
+  display: inline;
+  font-weight: 300;
+}
+
+.change-text {
+  margin-left: -3px;
+}
+
+p {
+	font-family: sans-serif;
+	font-size: 16px;
+	line-height: 28px;
+}
+
+
+@keyframes blinking {
+  0%    { opacity: 0; }
+  50%   { opacity: 0; }
+  51%   { opacity: 1; }
+  100%  { opacity: 1; }
+}
+</style>
+  
+</head>
+
+<body>
+	
+  <div class="content">
+	  <div class="text">Knowledge. Experience. Integrity. Commit</div>
+	  <div class="change-text">ment.</div>
+	  <p>Wright, Constable & Skeen proudly continues a tradition of providing unparalleled legal services in the Mid-Atlantic region that began more than one hundred years ago. Our drive for excellence blends the personal attention and responsiveness expected of mid-sized law firms with one of the major advantages provided by larger firms—dynamic practice groups with highly skilled and acclaimed lawyers. We are committed to protecting and empowering our clients and achieving their goals.</p>
+  </div>
+  
+<!--     <script  src="js/index.js"></script> -->
+<script>
+	var words = ['ment.', 'ment to your goals.','ment to your vision.','ment to your success.','ment to fighting for your rights.','ment to turning problems into solutions.', 'ment to turning problems into solutions.','ment to you.'],
+    currentStep = 0,
+    textEl = document.querySelector('.change-text'),
+    oldWord = '';
+
+
+setTimeout(changeWord, 800);
+
+function changeWord() {
+  oldWord = textEl.innerHTML;
+  
+  // check if there is a word atm or not
+  if (oldWord.length < 1) {
+
+    if (currentStep !== words.length -1) {
+          currentStep ++;
+    }else {
+      currentStep = 0;
+    }
+    addNextWord();
+  } else {
+    setTimeout(deleteWord, 600);
+  }
+  
+};
+
+function deleteWord() {
+  var WordLength = oldWord.length,
+      currentWord = textEl.innerHTML,
+      currentLength = currentWord.length;
+  
+
+  // The word is deleted so, start adding in the new one
+  if (currentLength < 1) {
+    changeWord();
+    return;
+  }
+  
+  // Remove a charachter
+  textEl.innerHTML = currentWord.substring(0, currentLength - 1);
+  
+  setTimeout(deleteWord, 60);
+}
+
+function addNextWord() {
+  var currentWord = textEl.innerHTML,
+      currentLength = currentWord.length,
+      nextWord = words[currentStep],
+      nextWordLength = nextWord.length;
+    
+  
+  if (currentLength === nextWordLength) {
+    changeWord();
+    return;
+  }
+  
+  // add a charachter
+  textEl.innerHTML = nextWord.substring(0, currentLength + 1);
+    
+  setTimeout(addNextWord, 80);
+  
+  
+}
+</script>
+
+</body>
+</html>
