@@ -1,0 +1,19 @@
+.content {
+	padding: 120px 0;
+	max-width: 1200px;
+	width: 90%;
+	margin: 0 auto;
+}
+h1 {
+	font-family: serif;
+	font-size: 44px;
+	line-height: 54px;
+}
+#rotate {
+    display: inline-block;
+}
+p {
+	font-family: sans-serif;
+	font-size: 20px;
+	line-height: 32px;
+}
